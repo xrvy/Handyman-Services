@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Devs</title>
+    <link rel="icon" href="images\favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&family=Poppins:ital,wght@0,400;0,500;1,400;1,500&family=Roboto:ital,wght@1,700&family=Rowdies&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+
+<style>
+
+    body{
+        background-color: rgb(236, 232, 225);
+    }
+
+    .video-vlog{
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    #vlog {
+        width: 100%;
+        
+    }
+
+    .main{
+        padding: 10px 50px 20px 50px;
+    }
+
+    #social{
+        width: 50px;
+    }
+
+    #arvy, #ali, #ana{
+        width: 100%;
+        height: 300px;
+        object-position:0 55%;
+        object-fit: cover;
+    }
+
+    #rens {
+        width: 100%;
+        height: 300px;
+        object-position:0 0;
+        object-fit: cover;
+    }
+
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 400px);
+        column-gap: 50px;
+        row-gap: 50px;
+        height: 300px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile {
+        display: inline-block;
+        align-items: center;
+        box-shadow: 0 0 8px rgba(0,0,0,0.5);
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
+    .profile:hover{
+        transform: translate3d(0,-1px,0) scale(1.03);
+    }
+
+    .title{
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+        font-size: 3em;
+        color: rgb(218, 146, 53);
+        text-align: center;
+    }
+
+    .name{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.5em;
+    }
+
+    .role{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .nickname {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #social, #social1{
+        width: 30px;
+    }
+
+    #social1{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #social:hover, #social1:hover{
+        cursor: pointer;
+        transform: translate3d(0,-1px,0) scale(1.03);
+    }
+
+    .swiper {
+    width: 70%;
+    height: fit-content;
+    z-index: 5;
+    margin-top: 850px;
+    }
+
+    .swiper-slide img {
+    width: 100%;
+    height: 536px;
+    object-fit: cover;
+    }
+
+    .swiper .swiper-button-prev, .swiper .swiper-button-next {
+    color: rgb(218, 146, 53);
+    }
+
+    .swiper .swiper-pagination-bullet-active{
+    background-color: rgb(218, 146, 53);
+    }
+
+    .home-button{
+    text-align: center;
+}
+    
+    .btn {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    color: var(--button-text-color);
+    cursor: pointer;
+    
+    --button-text-color: var(--background-color);
+    --button-text-color-hover: var(--button-background-color);
+    --button-background-color: #c2baa6;
+    --border-color: #9b9b9b;
+    --highlight-color: rgb(218, 146, 53);
+    --button-inner-border-color: transparent;
+    --button-bits-color: var(--background-color);
+    --button-bits-color-hover: var(--button-background-color);
+    
+    position: relative;
+    padding: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all .15s ease;
+    margin-top: 50px;
+  }
+
+
+.btn::before,
+.btn::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0; left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid var(--border-color);
+  transition: all .15s ease;
+}
+
+.btn::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.btn::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+
+.btn:active::before,
+.btn:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.btn:active::before {
+  top: 3px;
+}
+
+.btn:active::after {
+  bottom: 3px;
+}
+
+.btn__inner {
+  position: relative;
+  display: block;
+  padding: 20px 30px;
+  background-color: var(--button-background-color);
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px var(--button-inner-border-color);
+}
+
+.btn__inner::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: var(--button-bits-color);
+}
+
+.btn__inner::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: var(--button-bits-color);
+  transition: all .2s ease;
+}
+
+.btn__slide {
+  display: block;
+  position: absolute;
+  top: 0; bottom: -1px; left: -8px;
+  width: 0;
+  background-color: var(--highlight-color);
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.btn__content {
+  position: relative;
+}
+
+.btn:hover {
+  color: var(--button-text-color-hover);
+}
+
+.btn:hover .btn__slide{
+  width: calc(100% + 15px);
+}
+
+.btn:hover .btn__inner::after {
+  background-color: var(--button-bits-color-hover);
+}
+
+</style>
+
+<body>
+
+    <div class="main">
+        <h1 class="title">the devs</h1>
+    <div class="card">
+        <div class="profile">
+            <img id="arvy" src="images\arvy.jpg" alt="">
+            <h2 class="name">Lapira, Arvy T.</h2>
+            <p class="role">Team Leader / Programmer</p>
+            <h1 class="nickname">Jungkook (real) </h1>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social" src="images\facebook.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social1" src="images\twitter.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social" src="images\instagram.png" alt=""></a>
+            </div>
+        </div>
+        
+        <div class="profile">
+            <img id="ali" src="images\ali.jpg" alt="">
+            <h2 class="name">Candelario, Alyssa A.</h2>
+            <p class="role">Graphics Designer</p>
+            <h1 class="nickname">Ganda </h1>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social" src="images\facebook.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social1" src="images\twitter.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social" src="images\instagram.png" alt=""></a>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img id="ana" src="images\ana.jpg" alt="">
+            <h2 class="name">Basangan, Analisa G.</h2>
+            <p class="role">Content Editor</p>
+            <h1 class="nickname">Maganda (leg8)</h1>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social" src="images\facebook.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social1" src="images\twitter.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social" src="images\instagram.png" alt=""></a>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img id="rens" src="images\rens.jpg" alt="">
+            <h2 class="name">Lozano, Rens Carlo G.</h2>
+            <p class="role">Tester / Documentation</p>
+            <h1 class="nickname">"Woof Woof Woof!" </h1>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social" src="images\facebook.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social1" src="images\twitter.png" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100083662747852"><img id="social" src="images\instagram.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+
+    <span id="square-1"></span>
+    <span id="square-2"></span>
+    <span id="square-3"></span>
+    <span id="square-4"></span>
+    <span id="square-5"></span>
+    <span id="square-6"></span>
+    <span id="square-7"></span>
+    <span id="square-8"></span>
+    <span id="square-9"></span>
+<div class="swiper">
+    <h1 class="title">Photo gallery</h1>
+    <div class="swiper-wrapper">
+      
+      <div class="swiper-slide"><img src="images\2.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images\8.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images\3.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images\5.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images\4.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images\6.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images\7.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="images\1.jpg" alt=""></div>
+    </div>
+    
+    <div class="swiper-pagination"></div>
+  
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+  </div>
+
+    <div class="video-vlog">
+        <h1 class="title">Vlog</h1>
+        <video id="vlog" autoplay loop controls>
+            <source src="videos\vlog.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="home-button">
+        <button onclick="location.href='index.html'" class="btn">
+          <span class="btn__inner">
+            <span class="btn__slide"></span>
+            <span class="btn__content">Back to Home</span>
+          </span>
+        </button>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
